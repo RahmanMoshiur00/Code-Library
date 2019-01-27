@@ -1,3 +1,6 @@
+
+// LightOJ 1041	- Road Construction
+
 #include <bits/stdc++.h>
 using namespace std;
 #define repit(it, x)  for(__typeof__((x).begin()) it = (x).begin(); it != (x).end(); ++it)
