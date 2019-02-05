@@ -1,0 +1,51 @@
+
+// LightOJ 1300 - Odd Personality
+
+
+#define repit(it, x)  for(__typeof__((x).begin()) it = (x).begin(); it != (x).end(); ++it)
+#define perit(it, x)  for(__typeof__((x).rbegin()) it = (x).rbegin(); it != (x).rend(); ++it)
+#define rep(i, begin, end) for(int i = (begin); i < (end); ++i)
+#define per(i, end, begin) for(int i = (end)-1; i >= (begin); --i)
+#define mem(a, v)     for(int i=0, sz=sizeof(a)/sizeof(*a); i<sz; i++){ a[i] = v; }
+#define memset(a, v)  memset((a), v, sizeof(a))
+#define mxn           10010
+
+vector<int> adj[mxn];
+
+int biColNodes = 0;
+bool vis[mxn], color[mxn];
+
+bool isBicolorable(int u, int col) // checks if bi-colorable, because cycle with odd nodes cannot be bi-colored
+{
+    if(vis[u]) return (color[u] == col);
+
+    vis[u] = true; // vis[] tracks if any node is visited
+    color[u] = col; // col[] indicates color of nodes
+
+    biColNodes++; // biColNodes this is a globally variable set to zero before calling this(isBicolorable) function;
+           // biColNodes counts the number of nodes that can be bicolored if bicoloring is possible
+
+    bool biCol = true;
+    repit(it, adj[u]){
+        int v = *it;
+        biCol &= isBicolorable(v, color[u]^1);
+    }
+
+    return biCol;
+}
+
+
+int32_t main()
+{
+    // Input Graph
+
+    rep(i, 0, mxn) color[i] = vis[i] = false;
+    int total = 0; //total bicolorable nodes
+    rep(i, 0, n){
+        biColNodes = 0;
+        if(!vis[i]){
+            if(!isBicolorable(i, 0)) total += biColNodes;
+        }
+    }
+
+}
