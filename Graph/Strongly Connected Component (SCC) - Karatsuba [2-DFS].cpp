@@ -33,7 +33,7 @@ void dfs_scc(int u)
     }
 }
 
-void find_scc(int n)
+void scc_calculation(int n)
 {
     memset(vis, false, sizeof vis);
     for(int i=0; i<n; i++){
@@ -63,7 +63,7 @@ int main()
         trans[v].push_back(u);
     }
 
-    find_scc(n); // finds all scc for all n nodes
+    scc_calculation(n); // finds all scc for all n nodes
 
     for(int i=0; i<n; i++) adj[i].clear(), trans[i].clear();
 }
