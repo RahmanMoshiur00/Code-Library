@@ -45,8 +45,8 @@ void scc_calculation(int n)
     while(!stk.empty()){
         int u = stk.top(); stk.pop();
         if(!vis[u]){
-            scc_count++;
             dfs_scc(u);
+            scc_count++;
         }
     }
 }
