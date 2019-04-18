@@ -5,6 +5,7 @@ Tutorial: https://www.hackerearth.com/practice/notes/mos-algorithm/
     1. Array is not modified by queries (i.e. offline query)
     2. Queries are known beforehand
     3. If you know V([L, R]), then you can compute V([L + 1, R]), V([L - 1, R]), V([L, R - 1]) and V([L, R + 1]), each in O(F) time.
+    PS. in this implementation O(F) = O(1)
 */
 
 // Problem: LightOJ 1188 - Fast Queries, SPOJ - DQUERY
