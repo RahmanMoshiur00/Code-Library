@@ -1,5 +1,5 @@
 /*
-    Problem: Codeforces 915E: Physical Education Lessons
+    Problem: Codeforces 915E - Physical Education Lessons
     Category: Segment Tree
 */
 
